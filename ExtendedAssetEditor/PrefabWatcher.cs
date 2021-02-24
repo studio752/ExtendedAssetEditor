@@ -101,10 +101,13 @@ namespace ExtendedAssetEditor
                 }               
                 if(trailersHaveChanged)
                 {
+                    Debug.Log("Trailers changed");
                     m_trailerNames = new string[trailerCount];
                     for(int i = 0; i < trailerCount; i++)
                     {
-                        m_trailerNames[i] = (properties.m_editPrefabInfo as VehicleInfo).m_trailers[i].m_info.name;
+                        m_trailerNames[i] = (properties.m_editPrefabInfo as 
+                            VehicleInfo).m_trailers[i].m_info.name;
+                        Debug.Log(m_trailerNames[i]);
                     }
                     trailersChanged?.Invoke(m_trailerNames);
                 }
